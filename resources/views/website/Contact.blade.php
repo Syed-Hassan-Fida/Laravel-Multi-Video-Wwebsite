@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<!-- saved from url=(0033)https://www.ameliehaeck.com/about -->
+<html data-wf-domain="www.ameliehaeck.com" data-wf-page="636d31afbd19aabb313b02d1" data-wf-site="636d31afbd19aa510b3b02cc" class=" w-mod-js w-mod-ix" data-lt-installed="true">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style>.wf-force-outline-none[tabindex="-1"]:focus{outline:none;}</style>
+    <title>About</title>
+    <meta content="Contact" property="og:title">
+    <meta content="Contact" property="twitter:title">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="{{asset('webstyle\Contact_files\ameliehaeck03.webflow.d3a04e498.css')}}" rel="stylesheet" type="text/css"><!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js" type="text/javascript"></script><![endif]-->
+    <script type="text/javascript" async="" src="{{asset('webstyle\Contact_files\analytics.js.download')}}"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+    <script type="text/javascript">!function(o,c){var n=c.documentElement,t=" w-mod-";n.className+=t+"js",("ontouchstart"in o||o.DocumentTouch&&c instanceof DocumentTouch)&&(n.className+=t+"touch")}(window,document);</script>
+    <link href="{{ asset('images\White-Background-Icon.png') }}" rel="shortcut icon" type="image/x-icon">
+    <link href="{{ asset('images\White-Background-Icon.png') }}" rel="apple-touch-icon">
+    <style>
+
+      * {
+        -webkit-font-smoothing: antialiased;
+          -moz-font-smoothing: antialiased;
+            -o-font-smoothing: antialiased;
+        }
+
+        .img-1 {
+          max-width: 100%;
+          vertical-align: middle;
+          display: inline-block;
+          /* height: 120vh; */
+          position: relative;
+      }
+      
+      .app-form-control {
+        width: 30%;
+        padding: 10px 0;
+        margin-right: 10px;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #fe3d30;
+        color: #fe3d30;
+        font-size: 14px;
+        /* text-transform: uppercase; */
+        outline: none;
+        transition: border-color .2s;
+      }
+
+      .app-form-control::placeholder {
+        color: #fe3d30;
+      }
+
+      .app-form-control:focus {
+        border-bottom-color: #fe3d30;
+      }
+
+      .app-form-control1 {
+        width: 94%;
+        padding: 10px 0;
+        margin-right: 10px;
+        background: none;
+        border: none;
+        border: 1px solid #fe3d30;
+        color: #fe3d30;
+        font-size: 14px;
+        /* text-transform: uppercase; */
+        outline: none;
+        transition: border-color .2s;
+      }
+
+      .app-form-control1::placeholder {
+        color: #fe3d30;
+        padding-left: 5px;
+      }
+
+      .app-form-control1:focus {
+        border-bottom-color: #fe3d30;
+        padding-left: 10px;
+      }
+
+      .btn1 {
+          width: 53px;
+          height: 23px;
+          background-color: #fe3d30;
+          color: white;
+          margin-top: 8px;
+          font-size: 13px;
+      }
+
+      .btn1:hover{
+        background-color: white;
+        color: #fe3d30;
+      }
+
+    </style>
+<style data-emotion="css-global">
+  </style>
+</head>
+<body class="body-2" data-new-gr-c-s-check-loaded="14.1093.0" data-gr-ext-installed="">
+  <outwrite-root></outwrite-root>
+  <div class="nav-container">
+    <div class="nav-wrapper">
+      <a id="home" data-w-id="396a7d8a-d017-659d-d178-bbfaad868557" href="{{route('brebow-index')}}" class="div-block-6 nom w-inline-block">
+      {{-- <div class="text-block-p">Brebow</div> --}}
+      <div class="sidebar-brand-text">
+        <img src="{{asset('images\White Background Logotype.png')}}" height="28">
+      </div>
+
+      </a>
+      <div class="div-block-6 contact">
+        <div class="text-block-p">
+          <a href="{{ route('contact') }}" aria-current="page" class="w--current">About</a>
+          </div>
+          <div class="text-block-p">
+            <a href="{{ route('archive') }}">Archives</a>
+            </div>
+            </div>
+            <a href="#" class="div-block-6 w-inline-block">
+            <div class="text-block-p fr-hide">Fr</div>
+            </a>
+            </div>
+            </div>
+            <div class="section padding">
+              <div class="div-block-7">
+                <div class="div-block-12">
+                  <div data-w-id="" style="opacity: 1;" class="">
+                    {{-- <img src="{{ asset('myvideos/1.mp4') }}" class="img-1" alt="">
+                     --}}
+                     @if($contact)
+                      <video id="" loop="" autoplay="" muted="" class="img-1" >
+                        <source src="{{ asset('about_videos/'. $contact->about_video) }}" >
+                      </video>
+                     @endif
+                  </div>
+                  <div>
+                    @if($contact)
+                      <div style="transform: translate3d(0px, 0vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); opacity: 1; transform-style: preserve-3d;" class="text-h3">
+                        {{$contact->title}} <br>
+                      </div>
+                      
+
+                      {{-- <div class="text-h3 margin-top" style="transform: translate3d(0px, 0vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1;">
+                        <a href="tel:+{{ $item->contact }}">{{ $item->contact }}</a>
+                        <br>
+                        <a href="mailto:{{ $item->email }}">{{ $item->email }}</a>
+                      </div> --}}
+                      
+                    @else
+                      <div style="transform: translate3d(0px, 0vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); opacity: 1; transform-style: preserve-3d;" class="text-h3">
+                        Motion designer and <br>Art Director based in Montreal.
+                      </div>
+                      <div class="text-h3 margin-top" style="transform: translate3d(0px, 0vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d; opacity: 1;">
+                        <a href="tel:+15146628210">+1 514 662 8210</a>
+                        <br>
+                        <a href="mailto:bonjour@ameliehaeck.com">bonjour@ameliehaeck.com</a>
+                      </div>
+                    @endif
+                    <div class="div-block-10">
+                      <div class="accordeon-wrap">
+                        @if(Session::has('message'))
+                            <div style="margin-top: 7px;" >
+                                <p style="color: green"; class="hide_message" >{{ Session::get('message') }}</p>
+                            </div>
+                        @endif
+                        <div data-w-id="5e5f3cf2-c773-2cf0-e17b-38304db3c360" style="width: 100%; height: 1px;" class="line-divider">
+                        </div>
+                        <div data-click="faq" class="accordion">
+                          <div style="opacity: 1;" class="accordion-top">
+                          <a id="Clients" href="#" class="accordion-top-wrap w-inline-block">
+                          <div class="text-block-p">Contact</div>
+                          </a>
+                          <div class="dot red"></div>
+                          </div>
+                          <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
+                          <div class="accordion-bottom-wrap">
+                            <div class="grid-2 clients">
+                              <form action="{{ route("sent-mail") }}" method="post">
+                                @csrf
+                                <div style="margin-bottom: 15px;">
+                                  <input type="text" class="app-form-control" name="name" placeholder="Name" id="" required>
+                                  <input type="email" class="app-form-control" name="email" placeholder="Email" id="" required>
+                                  <input type="number" class="app-form-control" name="number" placeholder="Phone Number" id="" required>
+                                </div>
+                                <div class="form-outline">
+                                  <textarea class="app-form-control1" name="message" id="textAreaExample1" rows="8" placeholder="Talk To Us" required></textarea>
+                                </div>
+                                <button type="submit" class="btn1">Send</button>
+                              </form>
+
+                              
+                              
+                            </div>
+                          </div>
+                        </div>
+
+                        <div data-click="faq" class="accordion">
+                          <div style="opacity: 1;" class="accordion-top">
+                          <a id="Clients" href="#" class="accordion-top-wrap w-inline-block">
+                          <div class="text-block-p">About</div>
+                          </a>
+                          <div class="dot red"></div>
+                          </div>
+                          <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
+                          <div class="accordion-bottom-wrap">
+                            <div class="grid-2 clients">
+                              @if($contact)
+                                {{-- @foreach ($clients as $client) --}}
+                                  <div class="text-block-p clients">{{ $contact->description }}</div>
+                                {{-- @endforeach --}}
+                              @else
+                                <div class="text-block-p clients">A Line Studio</div>
+                                <div class="text-block-p clients">Deux Huit Huit</div>
+                                <div class="text-block-p clients">Molotov</div>
+                                <div class="text-block-p clients">Public Office</div>
+                                <div class="text-block-p clients">Billy Club </div>
+                                <div class="text-block-p clients">Duprince</div>
+                                <div class="text-block-p clients">Nother Studio</div>
+                                <div class="text-block-p clients">Séisme</div>
+                                <div class="text-block-p clients">Bonsound</div>
+                                <div class="text-block-p clients">Feed</div>
+                                <div class="text-block-p clients">OPQ</div>
+                                <div class="text-block-p clients">Soleil</div>
+                                <div class="text-block-p clients">Caserne</div>
+                                <div class="text-block-p clients">Kombi</div>
+                                <div class="text-block-p clients">OTSTCFQ</div>
+                                <div class="text-block-p clients">Ssense</div>
+                                <div class="text-block-p clients">Cossette</div>
+                                <div class="text-block-p clients">Le Devoir</div>
+                                <div class="text-block-p clients">Phi</div>
+                                <div class="text-block-p clients">Tux</div>
+                                <div class="text-block-p clients">Demande Spéciale</div>
+                                <div class="text-block-p clients">L’Éloi</div>
+                                <div class="text-block-p clients">Porto Rocha</div>
+                                <div class="text-block-p clients">Wedge</div>
+                                <div class="text-block-p clients"></div>
+                              @endif
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div data-w-id="6a08754c-e45c-8aa7-71af-e37dcc18f015" style="width: 100%; height: 1px;" class="line-divider"></div>
+                      <div data-click="faq" class="accordion">
+                        <div style="opacity: 1;" class="accordion-top">
+                          <a id="Partners" href="#" class="accordion-top-wrap w-inline-block">
+                            <div class="text-block-p">Expertise</div>
+                          </a>
+                        <div class="dot red"></div>
+                      </div>
+                        <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
+                          <div class="accordion-bottom-wrap">
+                            <div class="grid-4">
+                              @if( $contact )
+                                @foreach ($expertise as $partner)
+                                  <div class="text-block-p clients">{{$partner}}</div>
+                                  {{-- <div class="text-block-p clients">{{$partner->title}}</div> --}}
+                                  {{-- <div id="w-node-cb5bf95e-0d22-c244-28e1-6ca934273ec9-313b02d1">
+                                    <div class="text-block-p clients">{{ $partner->description }}</div>
+                                  </div> --}}
+                                @endforeach
+                              @else
+                                <div class="text-block-p clients">Motion designer<br>2D and 3D</div>
+                                <div id="w-node-_30e5a2b3-8f3b-e0b4-e161-d85479871ad5-313b02d1">
+                                  <div class="text-block-p clients">Gabriel Bélisle</div>
+                                  <div class="text-block-p clients">Marc-Étienne Couture</div>
+                                  <div class="text-block-p clients">Mat &amp; Fab</div>
+                                  <div class="text-block-p clients">Samuel Charpentier</div>
+                                  <div class="text-block-p clients">Vincent Hurtubise</div>
+                                  <div class="text-block-p clients">Zachary Blais</div>
+                                </div>
+
+                                <div class="text-block-p clients">Sound designer</div>
+                                <div id="w-node-cb5bf95e-0d22-c244-28e1-6ca934273ec9-313b02d1">
+                                  <div class="text-block-p clients">Olivier Lamontagne</div>
+                                </div>
+
+                                <div class="text-block-p clients">Art Director </div>
+                                <div id="w-node-_133bf380-198e-00c5-1473-6d70313773f3-313b02d1">
+                                  <div class="text-block-p clients"> Samantha Ste-Marie</div>
+                                  <div class="text-block-p clients">Simon Langlois</div>
+                                </div>
+
+                                <div class="text-block-p clients">Illustrator</div>
+                                <div id="w-node-_0937a655-9d32-46b7-b820-75d4429083c4-313b02d1">
+                                  <div class="text-block-p clients">Aless MC</div>
+                                  <div class="text-block-p clients">Alice Picard</div>
+                                  <div class="text-block-p clients">Gabriel Bélisle</div>
+                                </div>
+
+                                <div class="text-block-p clients">Copywriter &amp; Brand strategy</div>
+                                <div id="w-node-_167b3e6a-d13a-c823-fcaf-1831c0c8e40e-313b02d1">
+                                  <div class="text-block-p clients">Cédric Gavillet</div>
+                                  <div class="text-block-p clients">Marc-André Lafrance</div>
+                                </div>
+                              @endif
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                              <div data-w-id="0f6c31c1-946f-ae1a-7f04-b8c823c5a05e" style="width: 100%; height: 1px;" class="line-divider"></div>
+                              <div data-click="faq" class="accordion" style="display: none;">
+                                <div style="opacity: 1;" class="accordion-top">
+                                  <a id="Love" href="#" class="accordion-top-wrap w-inline-block">
+                                    <div class="text-block-p">Send love letters</div>
+                                  </a>
+                                  <div class="dot red"></div>
+                                </div>
+                                <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
+                                <div class="accordion-bottom-wrap">
+                                  {{-- <div class="grid-4">
+                                    @if(sizeof($letters) > 0)
+                                      @foreach ($letters as $letter)
+                                        <div class="text-block-p clients">Studio</div>
+                                        <div id="w-node-_2fa99340-93fc-da94-e497-aba61edf74f2-313b02d1">
+                                          <div class="text-block-p clients">{{ $letter->address}}</div>
+                                        </div>
+
+                                        <div class="text-block-p clients">Ring</div>
+                                        <div id="w-node-_2fa99340-93fc-da94-e497-aba61edf7503-313b02d1">
+                                          <div class="text-block-p clients">
+                                            <a href="tel:+{{ $letter->contact }}">+{{ $letter->contact }}</a>
+                                          </div>
+                                        </div>
+
+                                        <div class="text-block-p clients">Write</div>
+                                        <div id="w-node-_2fa99340-93fc-da94-e497-aba61edf7508-313b02d1">
+                                          <div class="text-block-p clients">
+                                            <a href="mailto:{{ $letter->email }}">{{ $letter->email }}</a>
+                                          </div>
+                                        </div>
+
+                                        <div class="text-block-p clients">Like</div>
+                                        <div id="w-node-_2fa99340-93fc-da94-e497-aba61edf7511-313b02d1">
+                                          <div class="text-block-p clients">
+                                            <a href="{{ $letter->socialmedia }}" target="_blank">{{ $letter->socialmedia }}</a>
+                                          </div>
+                                          
+                                        </div>
+                                      @endforeach
+                                    @else
+                                      <div class="text-block-p clients">Studio</div>
+                                      <div id="w-node-_2fa99340-93fc-da94-e497-aba61edf74f2-313b02d1">
+                                        <div class="text-block-p clients">5333 Casgrain Avenue<br>Office 1111<br>Montreal</div>
+                                      </div>
+
+                                      <div class="text-block-p clients">Ring</div>
+                                      <div id="w-node-_2fa99340-93fc-da94-e497-aba61edf7503-313b02d1">
+                                        <div class="text-block-p clients">
+                                          <a href="tel:+1514662-8210">+1 514 662-8210</a>
+                                        </div>
+                                      </div>
+
+                                      <div class="text-block-p clients">Write</div>
+                                      <div id="w-node-_2fa99340-93fc-da94-e497-aba61edf7508-313b02d1">
+                                        <div class="text-block-p clients">
+                                          <a href="mailto:bonjour@ameliehaeck.com">bonjour[a]ameliehaeck.com</a>
+                                        </div>
+                                      </div>
+
+                                      <div class="text-block-p clients">Like</div>
+                                      <div id="w-node-_2fa99340-93fc-da94-e497-aba61edf7511-313b02d1">
+                                        <div class="text-block-p clients">
+                                          <a href="https://www.instagram.com/ameliehaeck" target="_blank">Instagram</a>
+                                        </div>
+                                        <div class="text-block-p clients">
+                                          <a href="https://vimeo.com/ameliehaeck" target="_blank">Vimeo</a>
+                                        </div>
+                                      </div>
+                                    @endif
+
+                                  </div> --}}
+                                </div>
+                              </div>
+                            </div>
+                            <div data-w-id="34a9ee1e-9337-bd93-2ff6-b0989ec981d6" style="width: 100%; height: 1px;" class="line-divider"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              <div class="html-embed-2 w-embed">
+   <style>
+
+a {
+    color: inherit;
+}
+
+
+
+</style></div>
+
+<script>
+  setTimeout(function() {
+    $('.hide_message').fadeOut('fast');
+  }, 3000);
+</script>
+
+<script src="{{ asset('webstyle\Contact_files\jquery-3.5.1.min.dc5e7f18c8.js.download') }}" type="text/javascript" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script src="{{asset('webstyle\Contact_files\webflow.849e56b93.js.download')}}" type="text/javascript"></script><!--[if lte IE 9]><script src="//cdnjs.cloudflare.com/ajax/libs/placeholders/3.0.2/placeholders.min.js"></script><![endif]-->
+<script src="{{ asset('webstyle\Contact_files\js.cookie.min.js.download') }}"></script>
+<script>
+// test for chrome
+if(navigator.vendor.match(/google/i)){
+
+// Set a cookie
+Cookies.set("activateSound", "soundValue", { expires: 365 });
+
+// Get a cookie
+Cookies.get("activateSound");
+
+// Check a cookie
+if (Cookies.get("activateSound") == "soundValue") {
+   // do something
+}
+
+// Delete a cookie
+Cookies.remove('activateSound');
+
+// Loop through each item with a class
+$(".cms_item").each(function (index) {
+  console.log( $(this).index() );
+});
+
+
+if (Cookies.get("soundMode") == "sound-on") {
+ 	let myVideo = $('#video');
+  $('.sound').toggleClass('hide');
+  $('#soundon').toggleClass('active');
+  myVideo.prop('muted', false);
+}
+
+
+$('.sound').on('click', function() {
+  let soundActivation = $(this).attr('data-sound');
+  Cookies.set("soundMode", soundActivation, { expires: 365 });
+	let myVideo = $('#video');
+  $('.sound').toggleClass('hide');
+  $('#soundon').toggleClass('active');
+  if ($('#soundon').hasClass('active')) {
+  	// First action
+    myVideo.prop('muted', false);
+  } else {
+  	// Second action
+  	myVideo.prop('muted', true);
+  }
+});
+
+}
+
+else {
+
+
+$('.sound').on('click', function() {
+	let myVideo = $('#video');
+  $('.sound').toggleClass('hide');
+  $('#soundon').toggleClass('active');
+  if ($('#soundon').hasClass('active')) {
+  	// First action
+    myVideo.prop('muted', false);
+  } else {
+  	// Second action
+  	myVideo.prop('muted', true);
+  }
+});
+
+}
+
+
+
+</script>
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="./Contact_files/js"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+gtag('config', 'UA-144916431-1');
+</script>
+<script>
+
+
+
+
+
+</script></body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
