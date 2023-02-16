@@ -258,7 +258,8 @@ class website extends Controller
             'year' => $request->year,
             'client' => $request->client,
             'project' => $request->project,
-            'industry' => $request->industry
+            'industry' => $request->industry,
+            'title' => $request->title,
         ]);
         
         return redirect()->back();
