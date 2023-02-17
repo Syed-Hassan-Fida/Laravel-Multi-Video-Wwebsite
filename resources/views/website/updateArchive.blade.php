@@ -22,6 +22,15 @@
 
     <link href="{{ asset('images\White-Background-Icon.png') }}" rel="shortcut icon" type="image/x-icon">
     <link href="{{ asset('images\White-Background-Icon.png') }}" rel="apple-touch-icon">
+    <style>
+        #rowAdder1 {
+            margin-bottom: 12px;
+        }
+
+        #rowAdder2 {
+            margin-bottom: 12px;
+        }
+    </style>
 
 </head>
 
@@ -382,7 +391,7 @@
                     </div>
 
                     <div class="mt-4">
-                        <h1>Update Archives Info</h1>
+                        <h1>Update Archives</h1>
                         <form method="post" action="{{ route('updateArchives') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
@@ -423,7 +432,7 @@
                     <br><br>
 
                     <div class="mt-4">
-                        <h1>Update Archives Info</h1>
+                        <h1>Update Archives Gif</h1>
                         <form method="post" action="{{ route('updateAvideo') }}" enctype="multipart/form-data">
                             @csrf
 
@@ -441,7 +450,7 @@
                     <br><br>
                     
                     <div class="mt-4">
-                        <h1>Add Archives Info</h1>
+                        <h1>Add Archives Video</h1>
                         <form method="post" action="{{ route('updateAgif') }}" enctype="multipart/form-data">
                             @csrf
 
@@ -451,6 +460,84 @@
                             </div>
 
                             <input type="hidden" name="arch_id" value="{{ $archives->id }}">
+
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </form>
+                    </div>
+
+                    <br><br>
+                    @php
+                        $arch_info_id = [];
+                    @endphp
+
+                    <div class="mt-4">
+                        <h1>Update Archive Video Info</h1>
+                        <form method="post" action="{{ route('archive-single-info-edit') }}" enctype="multipart/form-data">
+                            @csrf
+
+                            @if(sizeof($archivesInfo) > 0)
+                                @foreach ($archivesInfo as $key => $archivesInfoItem)
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Col{{$key+1}}</label>
+                                        <input type="text" name="col1[]" value="{{ $archivesInfoItem->col1}}" class="form-control" id="exampleInputPassword1" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="exampleInputPassword1" class="form-label">Col{{$key+1}}</label>
+                                        <input type="text" name="col2[]" value="{{ $archivesInfoItem->col2}}" class="form-control" id="exampleInputPassword1" required>
+                                    </div>
+
+                                    <input type="hidden" name="arch_info_id[]" value="{{ $archivesInfoItem->id }}">
+                                    @php
+                                        $arch_info_id = $archivesInfoItem->id;
+                                    @endphp
+                                    
+                                @endforeach
+                            @else
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Archive Video Info Col1</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-danger"
+                                                id="DeleteRow1" type="button">
+                                                <i class="bi bi-trash"></i>
+                                                Delete
+                                            </button>
+                                        </div>
+                                        <input type="text"
+                                            class="form-control" name="col1[]" value="">
+                                    </div>
+                                    <div id="newinput1"></div>
+                                    <button id="rowAdder1" type="button"
+                                        class="btn btn-dark">
+                                        <span class="bi bi-plus-square-dotted">
+                                        </span> ADD
+                                    </button>
+                                </div>
+
+                                <div class="mb-3">
+                                    <label for="exampleInputPassword1" class="form-label">Archive Video Info Col2</label>
+                                    <div class="input-group mb-3">
+                                        <div class="input-group-prepend">
+                                            <button class="btn btn-danger"
+                                                id="DeleteRow2" type="button">
+                                                <i class="bi bi-trash"></i>
+                                                Delete
+                                            </button>
+                                        </div>
+                                        <input type="text"
+                                            class="form-control" name="col2[]" value="">
+                                    </div>
+                                    <div id="newinput2"></div>
+                                    <button id="rowAdder2" type="button"
+                                        class="btn btn-dark">
+                                        <span class="bi bi-plus-square-dotted">
+                                        </span> ADD
+                                    </button>
+                                </div>
+                            @endif
+
+                            
+                            <input type="hidden" name="arch_video_id" value="{{$arch_video_id}}">
 
                             <button type="submit" class="btn btn-primary">Submit</button>
                         </form>
@@ -840,6 +927,43 @@
     <!-- Page level custom scripts -->
     <script src="{{asset('admin\js\demo\chart-area-demo.js')}}"></script>
     <script src="{{asset('admin\js\demo\chart-pie-demo.js')}}"></script>
+
+    <script type="text/javascript">
+ 
+        $("#rowAdder1").click(function () {
+            newRowAdd =
+            '<div id="row1"> <div class="input-group mb-3">' +
+            '<div class="input-group-prepend">' +
+            '<button class="btn btn-danger" id="DeleteRow1" type="button">' +
+            '<i class="bi bi-trash"></i> Delete</button> </div>' +
+            '<input type="text" class="form-control" name="col1[]"  value=""> </div> </div>';
+    
+            $('#newinput1').append(newRowAdd);
+        });
+    
+        $("body").on("click", "#DeleteRow1", function () {
+            $(this).parents("#row1").remove();
+        })
+    </script>
+    
+    
+    <script type="text/javascript">
+     
+        $("#rowAdder2").click(function () {
+            newRowAdd =
+            '<div id="row2"> <div class="input-group mb-3">' +
+            '<div class="input-group-prepend">' +
+            '<button class="btn btn-danger" id="DeleteRow2" type="button">' +
+            '<i class="bi bi-trash"></i> Delete</button> </div>' +
+            '<input type="text" class="form-control" name="col2[]"  value=""> </div> </div>';
+    
+            $('#newinput2').append(newRowAdd);
+        });
+    
+        $("body").on("click", "#DeleteRow2", function () {
+            $(this).parents("#row2").remove();
+        })
+    </script>
 
 </body>
 

@@ -71,6 +71,8 @@ Route::post("home-single-video-edit",[AllUpdates::class, "homeSingleVideoEdit"])
 Route::post("home-single-info-edit",[AllUpdates::class, "homeSingleInfoEdit"])->name("home-single-info-edit");
 
 
+Route::post("archive-single-info-edit",[AllUpdates::class, "archieveSingleInfoEdit"])->name("archive-single-info-edit");
+
 
 
 

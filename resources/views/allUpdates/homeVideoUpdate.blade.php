@@ -184,7 +184,7 @@
 
                     <div class="mt-4">
                         <h1>Update Home Video Info</h1>
-                        <form method="post" action="{{ route('home-single-video-edit') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('home-video-edit') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Title</label>
@@ -216,7 +216,7 @@
                     @endphp
                     <div class="mt-4">
                         <h1>Update Home Vide Info</h1>
-                        <form method="post" action="{{ route('home-single-info-edit') }}" enctype="multipart/form-data">
+                        <form method="post" action="{{ route('home-info-edit') }}" enctype="multipart/form-data">
                             @csrf
 
                             @if(sizeof($HomeVideoInfo) > 0)

@@ -68,7 +68,7 @@
 
             <!-- Nav Item - Dashboard -->
             <li class="nav-item active">
-                <a class="nav-link" href="index.html">
+                <a class="nav-link" href="{{route("dashboard")}}">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
                     <span>Dashboard</span></a>
             </li>
@@ -549,7 +549,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">client</label>
+                                <label for="exampleInputPassword1" class="form-label">Client</label>
                                 <input type="text" name="client" value="" class="form-control" id="exampleInputPassword1" required>
                             </div>
                             <div class="mb-3">
@@ -558,7 +558,7 @@
                             </div>
 
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">industry</label>
+                                <label for="exampleInputPassword1" class="form-label">Industry</label>
                                 <input type="text" name="industry" value="" class="form-control" id="exampleInputPassword1" required>
                             </div>
 

@@ -48,7 +48,7 @@ class website extends Controller
 
     public function archive(){
         $data['archives'] = [];
-        $data['archives'] = archive::get();
+        $data['archives'] = archive::orderBy("id","desc")->get();
         // return $data['archives'] ;
         return view('website.Archives', $data);
     }
@@ -248,7 +248,10 @@ class website extends Controller
 
     public function updateA(Request $request){
         $data['archives'] = [];
+        $data['archivesInfo'] = [];
+        $data["arch_video_id"] = $request->id;
         $data['archives'] = archive::find($request->id);
+        $data['archivesInfo'] = ArchiveVideoInfo::where("arch_id", $request->id)->get();
         // return $data['archives']->year;
         return view("website.updateArchive", $data);
     }

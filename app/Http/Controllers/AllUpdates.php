@@ -8,6 +8,7 @@ use App\Models\HomeVideo;
 use App\Models\HomeVideoInfo;
 use App\models\SingleVideo;
 use App\Models\SingleVideoInfo;
+use App\Models\ArchiveVideoInfo;
 
 class AllUpdates extends Controller
 {
@@ -96,7 +97,7 @@ class AllUpdates extends Controller
         $size = sizeof($request->col1);
         $check = HomeVideoInfo::where("home_id",$request->home_video_id)->get();
         // return $check;
-        if($check == null){
+        if(sizeof($check) == 0){
             if($request->col1[0] != null){
                 for($i=0; $i<$size; $i++){
                     HomeVideoInfo::insert([
@@ -106,7 +107,7 @@ class AllUpdates extends Controller
                     ]);
                 }
             }
-        } else{
+        } else if (sizeof($check) > 0) {
             if($request->col1[0] != null){
                 for($i=0; $i<$size; $i++){
                     HomeVideoInfo::where("id", $ids[$i])->update([
@@ -129,7 +130,8 @@ class AllUpdates extends Controller
         $data["home_video_id"] = $request->id;
         $data["homeVideos"] = SingleVideo::find($request->id);
         $data["HomeVideoInfo"] = SingleVideoInfo::where("home_id", $request->id)->get();
-        return view("allUpdates.homeVideoUpdate", $data);
+        // return  $data["home_video_id"] ;
+        return view("allUpdates.singleVideoUpdate", $data);
     }
 
     public function homeSingleVideoEdit(Request $request){
@@ -167,7 +169,7 @@ class AllUpdates extends Controller
         $size = sizeof($request->col1);
         $check = SingleVideoInfo::where("home_id",$request->home_video_id)->get();
         // return $check;
-        if($check == null){
+        if(sizeof($check) == 0){
             if($request->col1[0] != null){
                 for($i=0; $i<$size; $i++){
                     SingleVideoInfo::insert([
@@ -177,11 +179,44 @@ class AllUpdates extends Controller
                     ]);
                 }
             }
-        } else{
+        } else if (sizeof($check) > 0) {
             if($request->col1[0] != null){
                 for($i=0; $i<$size; $i++){
                     SingleVideoInfo::where("id", $ids[$i])->update([
                         'home_id' => $request->home_video_id,
+                        'col1' => $arr1[$i] ,
+                        'col2' => $arr2[$i],
+                    ]);
+                }
+            }
+        }
+        
+        return redirect()->back();
+    }
+
+    public function archieveSingleInfoEdit(Request $request){
+        // return $request;
+        $arr1 = $request->col1;
+        $arr2 = $request->col2;
+        $ids = $request->arch_info_id;
+        $size = sizeof($request->col1);
+        $check = ArchiveVideoInfo::where("arch_id",$request->arch_video_id)->get();
+        // return sizeof($check);
+        if(sizeof($check) == 0){
+            if($request->col1[0] != null){
+                for($i=0; $i<$size; $i++){
+                    ArchiveVideoInfo::insert([
+                        'arch_id' => $request->arch_video_id,
+                        'col1' => $arr1[$i] ,
+                        'col2' => $arr2[$i],
+                    ]);
+                }
+            }
+        } else if(sizeof($check) > 0){
+            if($request->col1[0] != null){
+                for($i=0; $i<$size; $i++){
+                    ArchiveVideoInfo::where("id", $ids[$i])->update([
+                        'arch_id' => $request->arch_video_id,
                         'col1' => $arr1[$i] ,
                         'col2' => $arr2[$i],
                     ]);

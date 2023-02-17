@@ -274,7 +274,7 @@
                                     <td>{{$homeSingleVideo->title}}</td>
                                     @php
                                         $homeSingleVideoInfo = [];
-                                        $homeSingleVideoInfo = DB::table("home_video_infos")->where("home_id",  $homeSingleVideo->id)->get();
+                                        $homeSingleVideoInfo = DB::table("single_video_infos")->where("home_id",  $homeSingleVideo->id)->get();
                                     @endphp
                                     @if(sizeof($homeSingleVideoInfo) > 0)
                                     <td>
@@ -332,8 +332,8 @@
                                     <td>{{$archive->music}}</td>
                                     <td>{{$archive->design}}</td> --}}
                                     <td>
+                                        <a href="{{ route('updateA',  ['id'=>$archive->id]) }}" style="color: green; text-decoration: none;">Edit</a>
                                         <a href="{{ route('deleteArchives', ['id'=>$archive->id]) }}" style="color: red; text-decoration: none;">Delete</a>
-                                        <a href="{{ route('updateA',  ['id'=>$archive->id]) }}" style="color: green; text-decoration: none;">Update</a>
                                     </td>
                                 </tr>
                                 @endforeach
