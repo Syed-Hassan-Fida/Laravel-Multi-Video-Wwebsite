@@ -10,7 +10,7 @@ use App\Models\SendLoveLetter;
 use App\Models\archive;
 use App\Models\HomeVideo;
 use App\Models\HomeVideoInfo;
-use App\models\SingleVideo;
+use App\Models\SingleVideo;
 use App\Models\SingleVideoInfo;
 use App\Models\ArchiveVideoInfo;
 use App\Mail\ContactMail;
