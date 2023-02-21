@@ -77,7 +77,7 @@
                 <a href="{{ route('brebow-index') }}" class="div-block-6 nom page-projet w-inline-block">
                     {{-- <div class="text-block-p">Amélie Haeck</div> --}}
                     <div class="sidebar-brand-text">
-                        <img src="{{asset('images\White Background Logotype.png')}}" height="28">
+                        <img src="{{asset('images\Black Background Logotype.png')}}" height="28">
                     </div>
                 </a>
                 <div class="div-block-6 contact hide-mobile">
@@ -230,18 +230,18 @@
     if(navigator.vendor.match(/google/i)){
     
     // Set a cookie
-    Cookies.set("activateSound", "soundValue", { expires: 365 });
+    // Cookies.set("activateSound", "soundValue", { expires: 365 });
     
     // Get a cookie
-    Cookies.get("activateSound");
+    // Cookies.get("activateSound");
     
-    // Check a cookie
-    if (Cookies.get("activateSound") == "soundValue") {
-       // do something
-    }
+    // // Check a cookie
+    // if (Cookies.get("activateSound") == "soundValue") {
+    //    // do something
+    // }
     
     // Delete a cookie
-    Cookies.remove('activateSound');
+    // Cookies.remove('activateSound');
     
     // Loop through each item with a class
     $(".cms_item").each(function (index) {
@@ -249,12 +249,12 @@
     });
     
     
-    if (Cookies.get("soundMode") == "sound-on") {
-         let myVideo = $('#video');
-      $('.sound').toggleClass('hide');
-      $('#soundon').toggleClass('active');
-      myVideo.prop('muted', false);
-    }
+    // if (Cookies.get("soundMode") == "sound-on") {
+    //      let myVideo = $('#video');
+    //   $('.sound').toggleClass('hide');
+    //   $('#soundon').toggleClass('active');
+    //   myVideo.prop('muted', true);
+    // }
     
     
     $('.sound').on('click', function() {
@@ -465,6 +465,17 @@
             window.location.href = "<?php echo route('brebow-index'); ?>";
           }
         })
+        if (lastWord == "archive") {
+          $("#soundon").addClass("hide active")
+          $("#unmutebutton").removeClass("hide")
+          let myVideo = $('#video');
+          myVideo.prop('muted', false);
+        } else {
+          $("#soundon").addClass("hide active")
+          $("#unmutebutton").removeClass("hide")
+          let myVideo = $('#video');
+          myVideo.prop('muted', false);
+        }
     </script>
 </body>
 

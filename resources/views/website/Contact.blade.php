@@ -40,14 +40,19 @@
         border: none;
         border-bottom: 1px solid #fe3d30;
         color: #fe3d30;
-        font-size: 14px;
+        font-size: 1vw;
+        min-height: 1.5vw;
         /* text-transform: uppercase; */
         outline: none;
         transition: border-color .2s;
+        opacity: 1;
       }
 
       .app-form-control::placeholder {
         color: #fe3d30;
+        min-height: 1.5vw;
+        padding-right: 7%;
+        font-size: 1vw;
       }
 
       .app-form-control:focus {
@@ -62,15 +67,19 @@
         border: none;
         border: 1px solid #fe3d30;
         color: #fe3d30;
-        font-size: 14px;
+        font-size: 1vw;
+        min-height: 1.5vw;
         /* text-transform: uppercase; */
         outline: none;
         transition: border-color .2s;
+        opacity: 1;
       }
 
       .app-form-control1::placeholder {
         color: #fe3d30;
         padding-left: 5px;
+        font-size: 1vw;
+        min-height: 1.5vw;
       }
 
       .app-form-control1:focus {
@@ -79,19 +88,32 @@
       }
 
       .btn1 {
-          width: 53px;
-          height: 23px;
+          width: 70px;
+          height: 30px;
           background-color: #fe3d30;
           color: white;
           margin-top: 8px;
-          font-size: 13px;
+          font-size: 17px;
+          opacity: 1 !important;
       }
 
       .btn1:hover{
         background-color: white;
         color: #fe3d30;
       }
-
+      .grid-4 {
+        display: -ms-grid;
+        display: grid;
+        width: 100%;
+        padding-top: 1vw;
+        grid-auto-columns: 1fr;
+        grid-column-gap: 1vw;
+        grid-row-gap: -5vw !important;
+        -ms-grid-columns: 1fr 1fr 1fr 0.75fr;
+        grid-template-columns: 1fr 1fr 1fr 0.75fr;
+        -ms-grid-rows: auto auto;
+        grid-template-rows: auto auto;
+      }
     </style>
 <style data-emotion="css-global">
   </style>
@@ -127,7 +149,7 @@
                     {{-- <img src="{{ asset('myvideos/1.mp4') }}" class="img-1" alt="">
                      --}}
                      @if($contact)
-                      <video id="" loop="" autoplay="" muted="" class="img-1" >
+                      <video id="" loop="" autoplay="" muted="" class="img-1">
                         <source src="{{ asset('about_videos/'. $contact->about_video) }}" >
                       </video>
                      @endif
@@ -162,46 +184,51 @@
                                 <p style="color: green"; class="hide_message" >{{ Session::get('message') }}</p>
                             </div>
                         @endif
-                        <div data-w-id="5e5f3cf2-c773-2cf0-e17b-38304db3c360" style="width: 100%; height: 1px;" class="line-divider">
-                        </div>
+                        {{-- <div data-w-id="5e5f3cf2-c773-2cf0-e17b-38304db3c360" style="width: 100%; height: 1px;" class="line-divider">
+                        </div> --}}
+                        <div style="width: 100%; height: 1px;" class="line-divider"></div>
+
                         <div data-click="faq" class="accordion">
                           <div style="opacity: 1;" class="accordion-top">
-                          <a id="Clients" href="#" class="accordion-top-wrap w-inline-block">
-                          <div class="text-block-p">Contact</div>
-                          </a>
-                          <div class="dot red"></div>
+                            <a id="Clients" href="#" class="accordion-top-wrap w-inline-block">
+                              <div class="text-block-p" id="contact01">Contact</div>
+                            </a>
+                            <div class="dot red"></div>
                           </div>
-                          <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
-                          <div class="accordion-bottom-wrap">
-                            <div class="grid-2 clients">
-                              <form action="{{ route("sent-mail") }}" method="post">
-                                @csrf
-                                <div style="margin-bottom: 15px;">
-                                  <input type="text" class="app-form-control" name="name" placeholder="Name" id="" required>
-                                  <input type="email" class="app-form-control" name="email" placeholder="Email" id="" required>
-                                  <input type="number" class="app-form-control" name="number" placeholder="Phone Number" id="" required>
-                                </div>
-                                <div class="form-outline">
-                                  <textarea class="app-form-control1" name="message" id="textAreaExample1" rows="8" placeholder="Talk To Us" required></textarea>
-                                </div>
-                                <button type="submit" class="btn1">Send</button>
-                              </form>
+                          {{-- second line devider --}}
+                          <div style="width: 100%; height: 1px;" class="line-divider"></div>
 
-                              
-                              
+                          <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
+                            <div class="accordion-bottom-wrap" id="contact_wrap" >
+                              <div class="grid-2 clients">
+                                <form action="{{ route("sent-mail") }}" method="post">
+                                  @csrf
+                                  <div style="margin-bottom: 15px;">
+                                    <input type="text" class="app-form-control" style="opacity: 0.5;" name="name" placeholder="Name" id="" required>
+                                    <input type="email" class="app-form-control" style="opacity: 0.5;" name="email" placeholder="Email" id="" required>
+                                    <input type="number" class="app-form-control" style="opacity: 0.5;" name="number" placeholder="Phone Number" id="" required>
+                                  </div>
+                                  <div class="form-outline">
+                                    <textarea class="app-form-control1" style="opacity: 0.5;" name="message" id="textAreaExample1" rows="8" placeholder="Talk To Us" required></textarea>
+                                  </div>
+                                  <button type="submit" class="btn1" style="opacity: 1 !important;">Send</button>
+                                </form>
+
+                                
+                                
+                              </div>
                             </div>
                           </div>
-                        </div>
 
                         <div data-click="faq" class="accordion">
                           <div style="opacity: 1;" class="accordion-top">
-                          <a id="Clients" href="#" class="accordion-top-wrap w-inline-block">
-                          <div class="text-block-p">About</div>
-                          </a>
-                          <div class="dot red"></div>
+                            <a id="Clients" href="#" class="accordion-top-wrap w-inline-block">
+                              <div class="text-block-p" id="about01">About</div>
+                            </a>
+                            <div class="dot red"></div>
                           </div>
                           <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
-                          <div class="accordion-bottom-wrap">
+                          <div class="accordion-bottom-wrap" id="about_wrap">
                             <div class="grid-2 clients">
                               @if($contact)
                                 {{-- @foreach ($clients as $client) --}}
@@ -239,16 +266,18 @@
                         </div>
                       </div>
 
-                      <div data-w-id="6a08754c-e45c-8aa7-71af-e37dcc18f015" style="width: 100%; height: 1px;" class="line-divider"></div>
+                      {{-- <div data-w-id="6a08754c-e45c-8aa7-71af-e37dcc18f015" style="width: 100%; height: 1px;" class="line-divider"></div> --}}
+                      <div style="width: 100%; height: 1px;" class="line-divider"></div>
+                      
                       <div data-click="faq" class="accordion">
                         <div style="opacity: 1;" class="accordion-top">
                           <a id="Partners" href="#" class="accordion-top-wrap w-inline-block">
-                            <div class="text-block-p">Expertise</div>
+                            <div class="text-block-p" id="exp01">Expertise</div>
                           </a>
                         <div class="dot red"></div>
                       </div>
                         <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
-                          <div class="accordion-bottom-wrap">
+                          <div class="accordion-bottom-wrap" id="exp_wrap">
                             <div class="grid-4">
                               @if( $contact )
                                 @foreach ($expertise as $partner)
@@ -299,7 +328,9 @@
                         </div>
                       </div>
 
-                              <div data-w-id="0f6c31c1-946f-ae1a-7f04-b8c823c5a05e" style="width: 100%; height: 1px;" class="line-divider"></div>
+                              {{-- <div data-w-id="0f6c31c1-946f-ae1a-7f04-b8c823c5a05e" style="width: 100%; height: 1px;" class="line-divider"></div> --}}
+                              <div style="width: 100%; height: 1px;" class="line-divider"></div>
+                              
                               <div data-click="faq" class="accordion" style="display: none;">
                                 <div style="opacity: 1;" class="accordion-top">
                                   <a id="Love" href="#" class="accordion-top-wrap w-inline-block">
@@ -374,7 +405,7 @@
                                 </div>
                               </div>
                             </div>
-                            <div data-w-id="34a9ee1e-9337-bd93-2ff6-b0989ec981d6" style="width: 100%; height: 1px;" class="line-divider"></div>
+                            {{-- <div data-w-id="34a9ee1e-9337-bd93-2ff6-b0989ec981d6" style="width: 100%; height: 1px;" class="line-divider"></div> --}}
                           </div>
                         </div>
                       </div>
@@ -391,6 +422,29 @@ a {
 
 
 </style></div>
+
+<script>
+  $("#about_wrap").show();
+  $("#exp_wrap").show();
+  $("#contact_wrap").show();
+  $(document).ready(function(){
+    $("#contact01").click(function(){
+      $("#contact_wrap").show();
+      $("#about_wrap").hide(500);
+      $("#exp_wrap").hide(500);
+    });
+    $("#about01").click(function(){
+      $("#about_wrap").show();
+      $("#contact_wrap").hide(500);
+      $("#exp_wrap").hide(500);
+    });
+    $("#exp01").click(function(){
+      $("#exp_wrap").show();
+      $("#about_wrap").hide(500);
+      $("#contact_wrap").hide(500);
+    });
+  });
+</script>
 
 <script>
   setTimeout(function() {

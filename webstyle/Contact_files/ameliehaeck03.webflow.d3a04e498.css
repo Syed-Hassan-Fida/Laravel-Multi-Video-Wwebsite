@@ -1246,7 +1246,7 @@ a {
   padding-top: 1vw;
   grid-auto-columns: 1fr;
   grid-column-gap: 1vw;
-  grid-row-gap: 1vw;
+  grid-row-gap: -10vw;
   -ms-grid-columns: 1fr 1fr 1fr 0.75fr;
   grid-template-columns: 1fr 1fr 1fr 0.75fr;
   -ms-grid-rows: auto auto;

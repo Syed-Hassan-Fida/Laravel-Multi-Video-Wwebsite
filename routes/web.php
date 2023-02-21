@@ -64,7 +64,7 @@ Route::post("home-info-edit",[AllUpdates::class, "homeInfoEdit"])->name("home-in
 // update home single videos and info
 Route::post("home-single-video", [website::class, 'homeSingleVideoSave'])->name("home-single-video");
 Route::get('home-single-video-display', [website::class, 'homeSingleVideoDisplay'])->name("home-single-video-display");
-Route::post("home-single-video-delete",[website::class, "homeSingleVideoDelete"])->name("home-single-video-delete");
+Route::get("home-single-video-delete",[website::class, "homeSingleVideoDelete"])->name("home-single-video-delete");
 
 Route::get("home-single-video-edit-view",[AllUpdates::class, "homeSingleVideoEditView"])->name("home-single-video-edit-view");
 Route::post("home-single-video-edit",[AllUpdates::class, "homeSingleVideoEdit"])->name("home-single-video-edit");

@@ -77,7 +77,7 @@
                 <a href="{{ route('brebow-index') }}" class="div-block-6 nom page-projet w-inline-block">
                     {{-- <div class="text-block-p">Amélie Haeck</div> --}}
                     <div class="sidebar-brand-text">
-                        <img src="{{asset('images\White Background Logotype.png')}}" height="28">
+                        <img src="{{asset('images\Black Background Logotype.png')}}" height="28">
                     </div>
                 </a>
                 <div class="div-block-6 contact hide-mobile">
@@ -480,6 +480,19 @@
             window.location.href = "<?php echo route('brebow-index'); ?>";
           }
         })
+
+        if (lastWord == "archive") {
+          $("#soundon").addClass("hide active")
+          $("#unmutebutton").removeClass("hide")
+          let myVideo = $('#video');
+          myVideo.prop('muted', false);
+        } else {
+          $("#soundon").addClass("hide active")
+          $("#unmutebutton").removeClass("hide")
+          let myVideo = $('#video');
+          myVideo.prop('muted', false);
+        }
+        
     </script>
 </body>
 

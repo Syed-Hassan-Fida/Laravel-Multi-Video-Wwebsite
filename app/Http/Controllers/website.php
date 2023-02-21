@@ -191,11 +191,11 @@ class website extends Controller
     }
 
     public function homeVideoSave(Request $request){
-        // return sizeof($request->col1);
+        // return $request->gif->getClientOriginalName();
         // basename() 
         if($request->gif){
             $destinationPath1 = 'gifs';
-            $myimage1 = time().'.'.$request->gif->extension();
+            $myimage1 = $request->gif->getClientOriginalName();
             $request->gif->move(public_path($destinationPath1), $myimage1);
         }else{
             $myimage1 = null;
@@ -203,7 +203,7 @@ class website extends Controller
         
         if($request->video){
             $destinationPath2 = 'videos';
-            $myimage2 = time().'.'.$request->video->extension();
+            $myimage2 = $request->video->getClientOriginalName();
             $request->video->move(public_path($destinationPath2), $myimage2);
         }else{
             $myimage2 = null;
@@ -316,7 +316,7 @@ class website extends Controller
         // basename() 
         if($request->gif){
             $destinationPath1 = 'gifs';
-            $myimage1 = time().'.'.$request->gif->extension();
+            $myimage1 = $request->gif->getClientOriginalName();
             $request->gif->move(public_path($destinationPath1), $myimage1);
         }else{
             $myimage1 = null;
@@ -324,7 +324,7 @@ class website extends Controller
         
         if($request->video){
             $destinationPath2 = 'videos';
-            $myimage2 = time().'.'.$request->video->extension();
+            $myimage2 = $request->video->getClientOriginalName();
             $request->video->move(public_path($destinationPath2), $myimage2);
         }else{
             $myimage2 = null;
