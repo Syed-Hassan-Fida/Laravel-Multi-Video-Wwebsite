@@ -180,6 +180,7 @@
                           <tr>
                             <th scope="col">#</th>
                             <th scope="col">Title</th>
+                            <th scope="col">Line</th>
                             <th scope="col">About</th>
                             <th scope="col">Expertise</th>
                             <th scope="col">Action</th>
@@ -190,6 +191,7 @@
                                 <tr>
                                     <th scope="row">1</th>
                                     <td>{{$contacts->title}}</td>
+                                    <td>{{$contacts->line}}</td>
                                     <td>{{$contacts->description}}</td>
                                     <td>
                                         @foreach($expertise as $item)

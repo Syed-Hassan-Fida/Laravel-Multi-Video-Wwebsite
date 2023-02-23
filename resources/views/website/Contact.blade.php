@@ -158,6 +158,7 @@
                     @if($contact)
                       <div style="transform: translate3d(0px, 0vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); opacity: 1; transform-style: preserve-3d;" class="text-h3">
                         {{$contact->title}} <br>
+                        {{$contact->line}}
                       </div>
                       
 

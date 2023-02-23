@@ -634,6 +634,10 @@
                                 <input type="text" name="title" value="" class="form-control" id="exampleInputPassword1" required>
                             </div>
                             <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Line</label>
+                                <input type="text" name="line" value="" class="form-control" id="exampleInputPassword1" required>
+                            </div>
+                            <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">About</label>
                                 <input type="text" name="desc" value="" class="form-control" id="exampleInputPassword1" required>
                             </div>

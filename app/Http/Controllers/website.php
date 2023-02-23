@@ -70,9 +70,10 @@ class website extends Controller
         
         Contact::insert([
             'title' => $request->title,
+            'line' => $request->line,
             'description' => $request->desc,
             'about_video' =>  $myimage1,
-            'expertise' => $exp
+            'expertise' => $exp,
         ]);
         return redirect()->back();
     }

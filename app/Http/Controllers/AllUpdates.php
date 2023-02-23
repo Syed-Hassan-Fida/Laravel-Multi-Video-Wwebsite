@@ -27,6 +27,7 @@ class AllUpdates extends Controller
         $arr = json_encode($request->expertise);
         Contact::where("id", $request->about_id)->update([
             'title' => $request->title,
+            'line' => $request->line,
             'description' => $request->desc,
             'expertise' => $arr
         ]);

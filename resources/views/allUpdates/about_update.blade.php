@@ -182,6 +182,11 @@
                             </div>
 
                             <div class="mb-3">
+                                <label for="exampleInputPassword1" class="form-label">Line</label>
+                                <input type="text" name="line" value="{{ $contacts->line }}" class="form-control" id="exampleInputPassword1" >
+                            </div>
+
+                            <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">About</label>
                                 <input type="text" name="desc" value="{{ $contacts->description }}" class="form-control" id="exampleInputPassword1" >
                             </div>

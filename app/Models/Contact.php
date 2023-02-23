@@ -10,6 +10,7 @@ class Contact extends Model
     use HasFactory;
     protected $fillable = [
         'title',
+        'line',
         'description',
         'about_video',
         'expertise',
