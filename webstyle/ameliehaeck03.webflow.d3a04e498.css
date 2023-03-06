@@ -1460,6 +1460,7 @@ a {
 
   .text-block-p.play-pause {
     text-align: center;
+    display: none;
   }
 
   .text-block-p.clients {
@@ -1583,6 +1584,7 @@ a {
 
   .text-block-p.play-pause {
     text-align: center;
+    display: none;
   }
 
   .text-block-p.clients {

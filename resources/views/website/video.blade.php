@@ -64,6 +64,35 @@
     .section{
     
     }
+
+    .logo_image{
+        height: 55px;
+        padding-top: 5px;
+      }
+
+      @media screen and (max-width: 767px) {
+        .text-block-p.play-pause {
+          text-align: center;
+          display: none;
+        }
+
+        .logo_image{
+          height: 35px;
+          padding-top: 5px;
+        }
+      }
+
+      @media screen and (max-width: 991px) {
+        .text-block-p.play-pause {
+          text-align: center;
+          display: none;
+        }
+
+        .logo_image{
+          height: 35px;
+          padding-top: 5px;
+        }
+      }
     
     
     </style>
@@ -77,7 +106,7 @@
                 <a href="{{ route('brebow-index') }}" class="div-block-6 nom page-projet w-inline-block">
                     {{-- <div class="text-block-p">Amélie Haeck</div> --}}
                     <div class="sidebar-brand-text">
-                        <img src="{{asset('images\Black Background Logotype.png')}}" height="28">
+                        <img src="{{asset('images\Black Background Logotype.png')}}" class="logo_image">
                     </div>
                 </a>
                 <div class="div-block-6 contact hide-mobile">

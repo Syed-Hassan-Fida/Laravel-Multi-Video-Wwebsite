@@ -21,6 +21,18 @@
       -o-font-smoothing: antialiased;
   }
 
+  .logo_image{
+        height: 55px;
+        padding-top: 5px;
+      }
+
+      @media screen and (max-width: 991px) {
+        .logo_image{
+          height: 35px;
+          padding-top: 5px;
+        }
+      }
+
 </style>
 <style data-emotion="css-global">
 
@@ -35,7 +47,7 @@
       <a id="home" data-w-id="396a7d8a-d017-659d-d178-bbfaad868557" href="{{route('brebow-index')}}" class="div-block-6 nom w-inline-block">
         {{-- <div class="text-block-p">Brebow</div> --}}
         <div class="sidebar-brand-text">
-          <img src="{{asset('images\White Background Logotype.png')}}" height="28">
+          <img src="{{asset('images\White Background Logotype.png')}}" class="logo_image">
         </div>
       </a>
       <div class="div-block-6 contact"><div class="text-block-p"><a href="{{ route('contact') }}">About</a>
@@ -60,12 +72,12 @@
           <div class="dot red"></div>
           <div class="text-block-p">Client</div>
         </a>
-        <a id="Clients" sort-by=".project" href="{{route('archive')}}" class="link-block-2 sort-button w-inline-block">
+        <a id="Clients" sort-by=".project" href="{{route('archive')}}" class="link-block-2 hide-mobile sort-button w-inline-block">
           <div class="dot red">
             </div>
             <div class="text-block-p">Agency</div>
           </a>
-          <a id="Clients" sort-by=".secteur" href="{{route('archive')}}" class="link-block-2 hide-mobile sort-button w-inline-block">
+          <a id="Clients" sort-by=".secteur" href="{{route('archive')}}" class="link-block-2  sort-button w-inline-block">
             <div class="dot red">
               </div>
               <div class="text-block-p">Industry</div>
@@ -80,8 +92,8 @@
                   <a id="w-node-_62197054-0d5d-e94f-7902-01516f17e2ef-ec3b02d2" href="{{ route('video', ['id' => $arch->id ]) }}" class="grid-4 archive w-inline-block">
                     <div class="text-block-p year">{{ $arch->year }}</div>
                     <div class="text-block-p hide-mobile-portrait client">{{ $arch->client }}</div>
-                    <div class="text-block-p mobile-padding project">{{ $arch->project }}</div>
-                    <div class="text-block-p hide-mobile secteur">{{ $arch->industry }}</div>
+                    <div class="text-block-p hide-mobile mobile-padding project">{{ $arch->project }}</div>
+                    <div class="text-block-p  secteur">{{ $arch->industry }}</div>
                     <div id="w-node-d9334920-afcf-dc63-c8fc-0cf0f9e2e43a-ec3b02d2"class="tgumb-img-wrap pointer-none">
                       <img src="{{asset('gifs/'.$arch->gif)}}" loading="lazy" id="w-node-_38c9284c-9b18-739d-1b3f-513d9ba38626-ec3b02d2" alt="" class="thumb-img-archive" style="will-change: transform; transform: translate3d(-18.428vw, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;">
                     </div>

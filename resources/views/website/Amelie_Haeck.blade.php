@@ -28,6 +28,17 @@
     color: #F1F1F1 !important;
   }
   
+  .logo_image{
+        height: 55px;
+        padding-top: 5px;
+      }
+
+      @media screen and (max-width: 991px) {
+        .logo_image{
+          height: 35px;
+          padding-top: 5px;
+        }
+      }
 
 </style>
   <style data-emotion="css-global">
@@ -47,7 +58,7 @@
             <img src="{{ asset('images\Black Background Logotype.png') }}" alt="" width="150" height="80" >
             Brebow</div> --}}
           <div class="sidebar-brand-text">
-              <img src="{{asset('images\Black Background Logotype.png')}}" height="28">
+              <img src="{{asset('images\Black Background Logotype.png')}}" class="logo_image">
           </div>
         </a>
         <div class="div-block-6 contact">
@@ -127,9 +138,9 @@
           <div class="demoreel-container">
             <a data-w-id="4eec0963-02d5-4ae5-5bed-23fa7024cc03" href="{{ route('home-single-video-display', ['id' => $single->id ]) }}" class="video-thumbnail is-small demo-thumbnail w-inline-block">
               <div class="html-embed-3 w-embed">
-                <div data-poster-url="" data-video-urls="{{ asset('videos/'.$single->video) }}" data-autoplay="true" data-loop="true" data-preload="none" data-wf-ignore="true" style="width: 100%; height: 100%;" class="w-background-video w-background-video-atom">
+                <div data-poster-url="" data-video-urls="{{ asset('gifs/'.$single->gif) }}" data-autoplay="true" data-loop="true" data-preload="none" data-wf-ignore="true" style="width: 100%; height: 100%;" class="w-background-video w-background-video-atom">
                   <video id="" loop="" autoplay="" muted="" style="background-image: url(&#39;&#39;);" playsinline="" data-wf-ignore="true" preload="none" data-object-fit="cover">
-                    <source src="{{ asset('videos/'.$single->video) }}" data-wf-ignore="true">
+                    <source src="{{ asset('gifs/'.$single->gif) }}" data-wf-ignore="true">
                   </video>
                 </div>
               </div>
@@ -158,9 +169,9 @@
       <div role="listitem" class="collection-item project-thumbnail w-dyn-item">
         <div class="video-thumbnail-container">
           <div class="video-thumbnail is-small w-embed">
-            <div data-poster-url="" data-video-urls="{{ asset('videos/'.$item->video) }}" data-autoplay="true" data-loop="true" data-preload="none" data-wf-ignore="true" style="width: 100%; height: 100%;" class="w-background-video w-background-video-atom">
+            <div data-poster-url="" data-video-urls="{{ asset('gifs/'.$item->gif) }}" data-autoplay="true" data-loop="true" data-preload="none" data-wf-ignore="true" style="width: 100%; height: 100%;" class="w-background-video w-background-video-atom">
               <video id="" loop="" autoplay="" muted="" style="background-image: url(&#39;&#39;);" playsinline="" data-wf-ignore="true" preload="none" data-object-fit="cover">
-                <source src="{{ asset('videos/'.$item->video) }}" data-wf-ignore="true">
+                <source src="{{ asset('gifs/'.$item->gif) }}" data-wf-ignore="true">
               </video>
             </div>
           </div>
@@ -171,9 +182,9 @@
     <div role="listitem" class="collection-item project-thumbnail w-dyn-item">
       <div class="video-thumbnail-container">
         <div class="video-thumbnail is-small w-embed">
-          <div data-poster-url="" data-video-urls="{{ asset('videos/'.$single->video) }}" data-autoplay="true" data-loop="true" data-preload="none" data-wf-ignore="true" style="width: 100%; height: 100%;" class="w-background-video w-background-video-atom">
+          <div data-poster-url="" data-video-urls="{{ asset('gifs/'.$single->video) }}" data-autoplay="true" data-loop="true" data-preload="none" data-wf-ignore="true" style="width: 100%; height: 100%;" class="w-background-video w-background-video-atom">
             <video id="" loop="" autoplay="" muted="" style="background-image: url(&#39;&#39;);" playsinline="" data-wf-ignore="true" preload="none" data-object-fit="cover">
-              <source src="{{ asset('videos/'.$single->video) }}" data-wf-ignore="true">
+              <source src="{{ asset('gifs/'.$single->video) }}" data-wf-ignore="true">
             </video>
           </div>
         </div>

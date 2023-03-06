@@ -25,12 +25,46 @@
         }
 
         .img-1 {
-          max-width: 100%;
+          max-width: 103%;
           vertical-align: middle;
           display: inline-block;
           /* height: 120vh; */
           position: relative;
-      }
+        }
+        /* Styles for screens with width up to 1280px */
+        @media screen and (max-width: 1280px) {
+          .img-1 {
+            max-width: 103%;
+            vertical-align: middle;
+            display: inline-block;
+            /* height: 120vh; */
+            position: relative;
+          }
+        }
+
+        /* Styles for screens with width up to 1440px */
+        @media screen and (min-width: 1281px) and (max-width: 1440px) {
+          .img-1 {
+            max-width: 103%;
+            /* min-width: 103%; */
+            vertical-align: middle;
+            display: inline-block;
+            /* height: 120vh; */
+            position: relative;
+          }
+        }
+
+        /* Styles for screens with width greater than 1440px */
+        @media screen and (min-width: 1441px) {
+          .img-1 {
+            max-width: 103%;
+            min-width: 103%;
+            vertical-align: middle;
+            display: inline-block;
+            /* height: 120vh; */
+            position: relative;
+          }
+        }
       
       .app-form-control {
         width: 30%;
@@ -45,18 +79,35 @@
         /* text-transform: uppercase; */
         outline: none;
         transition: border-color .2s;
-        opacity: 1;
+        opacity: 0.5;
+      }
+
+      @media screen and (max-width: 601px) {
+        .app-form-control {
+        width: 30%;
+        padding: 10px 0;
+        margin-right: 10px;
+        background: none;
+        border: none;
+        border-bottom: 1px solid #fe3d30;
+        color: #fe3d30;
+        font-size: 3vw;
+        min-height: 1.5vw;
+        /* text-transform: uppercase; */
+        outline: none;
+        transition: border-color .2s;
+        opacity: 0.5;
+      }
       }
 
       .app-form-control::placeholder {
         color: #fe3d30;
-        min-height: 1.5vw;
-        padding-right: 7%;
-        font-size: 1vw;
+        opacity: 1;
       }
 
       .app-form-control:focus {
         border-bottom-color: #fe3d30;
+        opacity: 1;
       }
 
       .app-form-control1 {
@@ -73,27 +124,72 @@
         outline: none;
         transition: border-color .2s;
         opacity: 1;
+        opacity: 1 !important;
+      }
+      textarea::placeholder{
+        padding-left: 20px; 
+      }
+      @media screen and (max-width: 601px) {
+        .app-form-control1 {
+          width: 94%;
+          padding: 10px 0;
+          margin-right: 10px;
+          background: none;
+          border: none;
+          border: 1px solid #fe3d30;
+          color: #fe3d30;
+          font-size: 3vw;
+          min-height: 1.5vw;
+          /* text-transform: uppercase; */
+          outline: none;
+          transition: border-color .2s;
+          opacity: 0.5;
+          resize: none;
+        }
+
+        .btn1 {
+          width: 100px;
+          height: 50px;
+          background-color: #fe3d30;
+          color: white;
+          margin-top: 8px;
+          font-size: 14px;
+          
+        }
+
+        .btn1:hover{
+          background-color: white;
+          color: #fe3d30;
+        }
       }
 
       .app-form-control1::placeholder {
         color: #fe3d30;
-        padding-left: 5px;
-        font-size: 1vw;
-        min-height: 1.5vw;
+        opacity: 0.5;
+        
       }
 
       .app-form-control1:focus {
         border-bottom-color: #fe3d30;
-        padding-left: 10px;
+        padding-left: 20px;
+        opacity: 0.5;
       }
 
+      /* textarea {
+        padding-left: 0; 
+      }
+
+      textarea:focus {
+        padding-left: 20px;
+      } */
+
       .btn1 {
-          width: 70px;
-          height: 30px;
+          width: 100px;
+          height: 50px;
           background-color: #fe3d30;
           color: white;
           margin-top: 8px;
-          font-size: 17px;
+          font-size: 20px;
           opacity: 1 !important;
       }
 
@@ -101,7 +197,7 @@
         background-color: white;
         color: #fe3d30;
       }
-      .grid-4 {
+      /* .grid-4 {
         display: -ms-grid;
         display: grid;
         width: 100%;
@@ -113,7 +209,58 @@
         grid-template-columns: 1fr 1fr 1fr 0.75fr;
         -ms-grid-rows: auto auto;
         grid-template-rows: auto auto;
+      } */
+      .grid-4 {
+        display: -ms-grid;
+        display: grid;
+        width: 60%;
+        padding-top: -5vw;
+        grid-auto-columns: 0.6fr;
+        grid-column-gap: -6vw;
+        grid-row-gap: -5vw !important;
+        -ms-grid-columns: 1fr 1fr 1fr 0.75fr;
+        grid-template-columns: 1fr 1fr 1fr;
+        -ms-grid-rows: auto auto;
+        grid-template-rows: auto;
       }
+
+      .logo_image{
+        height: 55px;
+        padding-top: 5px;
+      }
+
+      @media screen and (max-width: 991px) {
+        .logo_image{
+          height: 35px;
+          padding-top: 5px;
+        }
+      }
+
+      @media screen and (max-width: 767px) {
+        .section.padding {
+            padding-top: 80px;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        .after_mobile{
+          padding-right: 15px;
+          padding-left: 15px;
+        }
+      }
+      @media screen and (max-width: 479px) {
+        .section.padding {
+            padding-top: 80px;
+            padding-right: 0px;
+            padding-left: 0px;
+        }
+        .after_mobile{
+          padding-right: 15px;
+          padding-left: 15px;
+        }
+      }
+
+    
+
     </style>
 <style data-emotion="css-global">
   </style>
@@ -124,8 +271,8 @@
     <div class="nav-wrapper">
       <a id="home" data-w-id="396a7d8a-d017-659d-d178-bbfaad868557" href="{{route('brebow-index')}}" class="div-block-6 nom w-inline-block">
       {{-- <div class="text-block-p">Brebow</div> --}}
-      <div class="sidebar-brand-text">
-        <img src="{{asset('images\White Background Logotype.png')}}" height="28">
+      <div class="sidebar-brand-text " >
+        <img src="{{asset('images\White Background Logotype.png')}}" class="logo_image">
       </div>
 
       </a>
@@ -154,7 +301,7 @@
                       </video>
                      @endif
                   </div>
-                  <div>
+                  <div class="after_mobile">
                     @if($contact)
                       <div style="transform: translate3d(0px, 0vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); opacity: 1; transform-style: preserve-3d;" class="text-h3">
                         {{$contact->title}} <br>
@@ -194,7 +341,7 @@
                             <a id="Clients" href="#" class="accordion-top-wrap w-inline-block">
                               <div class="text-block-p" id="contact01">Contact</div>
                             </a>
-                            <div class="dot red"></div>
+                            <div class="dot red red_dot"></div>
                           </div>
                           {{-- second line devider --}}
                           <div style="width: 100%; height: 1px;" class="line-divider"></div>
@@ -202,15 +349,15 @@
                           <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
                             <div class="accordion-bottom-wrap" id="contact_wrap" >
                               <div class="grid-2 clients">
-                                <form action="{{ route("sent-mail") }}" method="post">
+                                <form action="{{ route("sent-mail") }}" method="post" id="my-form">
                                   @csrf
                                   <div style="margin-bottom: 15px;">
-                                    <input type="text" class="app-form-control" style="opacity: 0.5;" name="name" placeholder="Name" id="" required>
-                                    <input type="email" class="app-form-control" style="opacity: 0.5;" name="email" placeholder="Email" id="" required>
-                                    <input type="number" class="app-form-control" style="opacity: 0.5;" name="number" placeholder="Phone Number" id="" required>
+                                    <input type="text" class="app-form-control"  name="name" placeholder="Name" id="" required>
+                                    <input type="email" class="app-form-control"  name="email" placeholder="Email" id="" required>
+                                    <input type="number" class="app-form-control"  name="number" placeholder="Phone Number" id="" required>
                                   </div>
                                   <div class="form-outline">
-                                    <textarea class="app-form-control1" style="opacity: 0.5;" name="message" id="textAreaExample1" rows="8" placeholder="Talk To Us" required></textarea>
+                                    <textarea  class="app-form-control1" name="message" id="input" rows="8" placeholder="Talk To Us" required></textarea>
                                   </div>
                                   <button type="submit" class="btn1" style="opacity: 1 !important;">Send</button>
                                 </form>
@@ -226,7 +373,7 @@
                             <a id="Clients" href="#" class="accordion-top-wrap w-inline-block">
                               <div class="text-block-p" id="about01">About</div>
                             </a>
-                            <div class="dot red"></div>
+                            <div class="dot red red_dot"></div>
                           </div>
                           <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
                           <div class="accordion-bottom-wrap" id="about_wrap">
@@ -275,18 +422,17 @@
                           <a id="Partners" href="#" class="accordion-top-wrap w-inline-block">
                             <div class="text-block-p" id="exp01">Expertise</div>
                           </a>
-                        <div class="dot red"></div>
+                        <div class="dot red red_dot"></div>
                       </div>
                         <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
                           <div class="accordion-bottom-wrap" id="exp_wrap">
+                            
+                              
                             <div class="grid-4">
                               @if( $contact )
                                 @foreach ($expertise as $partner)
                                   <div class="text-block-p clients">{{$partner}}</div>
-                                  {{-- <div class="text-block-p clients">{{$partner->title}}</div> --}}
-                                  {{-- <div id="w-node-cb5bf95e-0d22-c244-28e1-6ca934273ec9-313b02d1">
-                                    <div class="text-block-p clients">{{ $partner->description }}</div>
-                                  </div> --}}
+                                  
                                 @endforeach
                               @else
                                 <div class="text-block-p clients">Motion designer<br>2D and 3D</div>
@@ -337,7 +483,7 @@
                                   <a id="Love" href="#" class="accordion-top-wrap w-inline-block">
                                     <div class="text-block-p">Send love letters</div>
                                   </a>
-                                  <div class="dot red"></div>
+                                  <div class="dot red red_dot"></div>
                                 </div>
                                 <div style="opacity: 0; width: 100%; height: 0px; transform: translate3d(0px, 2vw, 0px) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg); transform-style: preserve-3d;" class="accordion-bottom">
                                 <div class="accordion-bottom-wrap">
@@ -424,25 +570,62 @@ a {
 
 </style></div>
 
+{{-- textarea script --}}
+<script>
+  $(document).ready(function(){
+    const input = document.getElementById('input');
+  
+    input.addEventListener('blur', () => {
+      input.style.paddingLeft = '20px';
+    });
+  })
+</script>
+
+{{-- input form script --}}
+<script>
+  const form = document.getElementById("my-form");
+  
+  form.addEventListener("focusin", function(event) {
+    if (event.target.matches("input, textarea")) {
+      event.target.style.opacity = "1";
+     
+    }
+  });
+  
+  form.addEventListener("focusout", function(event) {
+    if (event.target.matches("input, textarea") && event.target.value === "") {
+      event.target.style.opacity = "0.5";
+     
+     
+    }
+  });
+</script>
+
 <script>
   $("#about_wrap").show();
   $("#exp_wrap").show();
   $("#contact_wrap").show();
   $(document).ready(function(){
     $("#contact01").click(function(){
+      $(".red_dot").css({"background-color": "rgba(0, 0, 0, 0)"})
+      $(this).parent().parent().siblings(".red_dot").css({"background-color": "rgb(254, 61, 48)"})
       $("#contact_wrap").show();
-      $("#about_wrap").hide(500);
-      $("#exp_wrap").hide(500);
+      $("#about_wrap").hide(300);
+      $("#exp_wrap").hide(300);
     });
     $("#about01").click(function(){
+      $(".red_dot").css({"background-color": "rgba(0, 0, 0, 0)"})
+      $(this).parent().parent().siblings(".red_dot").css({"background-color": "rgb(254, 61, 48)"})
       $("#about_wrap").show();
-      $("#contact_wrap").hide(500);
-      $("#exp_wrap").hide(500);
+      $("#contact_wrap").hide(300);
+      $("#exp_wrap").hide(300);
     });
     $("#exp01").click(function(){
+      $(".red_dot").css({"background-color": "rgba(0, 0, 0, 0)"})
+      $(this).parent().parent().siblings(".red_dot").css({"background-color": "rgb(254, 61, 48)"})
       $("#exp_wrap").show();
-      $("#about_wrap").hide(500);
-      $("#contact_wrap").hide(500);
+      $("#about_wrap").hide(300);
+      $("#contact_wrap").hide(300);
     });
   });
 </script>
